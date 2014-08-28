@@ -1,0 +1,61 @@
+struct TokenReader<T> {
+    iter:  Tokenizer<T>
+    
+}
+
+impl<T: Iterator<char>> TokenReader<T> {
+    pub fn new(input: T) -> Tokenizer<T> {
+        Lexer {
+            iter: input.BufferedPeekable(),
+        }
+    }
+}
+
+
+
+fn parse(lexer:Lexer) {
+
+}
+
+macro_rules! lookahead [
+    (1) => ({
+]
+
+
+macro_rules! match_tokens [
+    (lookahead=$i:expr $($tokens:expr -> $res:expr),+) => 
+    ({
+        match lookahead_tuple![$i] {
+            $($(($token,))* => $res,)+
+        }
+    })
+]
+
+
+impl Parser {
+
+    fn parse_term(&mut self) {
+        match lookahead!(2) {
+            (Some(Atom(_)),       Some(GroupL)  ) => parse_structure(),
+            (Some(Atom(_)),       _             ) => parse_atom(),
+            (Some(Variable(_)),   _             ) => parse_variable(),
+        }
+    }
+
+    fn parse_structure(&mut self) {
+        let args = std::Vec.new();
+        loop {
+            match lookahead(1) {
+                Some(Atom(_) | Variable(_)) => args.push(parse_term());
+                Some(Separator)             => {next();}
+                Some(GroupR)                => {
+                    return Structure(args);
+                }
+            }
+        }
+    }
+
+    fn parse_variable(&mut self) {
+        match
+        
+    }

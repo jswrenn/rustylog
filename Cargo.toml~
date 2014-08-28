@@ -1,0 +1,10 @@
+[package]
+
+name = "prolog"
+version = "0.0.1"
+authors = ["john"]
+
+
+[dependencies.peg]
+
+git = "https://github.com/kevinmehall/rust-peg.git"

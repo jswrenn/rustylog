@@ -1,0 +1,2 @@
+/home/john/projects/prolog/target/prolog: /home/john/projects/prolog/src/main.rs /home/john/projects/prolog/src/tokenizer.rs /home/john/projects/prolog/src/parser.rs /home/john/projects/prolog/src/semantics.rs
+
